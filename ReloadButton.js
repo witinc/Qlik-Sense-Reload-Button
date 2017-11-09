@@ -7,7 +7,7 @@ define(["jquery", "qlik", "text!./lib/css/reload_btn.css"], function ($, qlik, c
 
                //Check if Qlik Sense Desktop or Server
                var isPersonalMode = true;
-               var isPartial = false;
+               var isPartial = true;
                var isAutoLoad = true;
                var isProcessReady = false;
 
@@ -125,6 +125,12 @@ define(["jquery", "qlik", "text!./lib/css/reload_btn.css"], function ($, qlik, c
                               // } );
                          }
                     }
+					
+				  if ( isAutoLoad )
+				  {		
+					  // Remove modal
+					  $("#modal-overlay").remove();
+				  }
                });
           }
      };
